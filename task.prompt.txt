@@ -1,0 +1,36 @@
+# EagleBrowse iOS 工程骨架（第一版，只做骨架，不做精致 UI）
+
+## 目标
+在 `/Users/lizekui/Projects/EagleBrowse` 创建可编译的 iOS SwiftUI 工程骨架。
+
+## 范围（严格）
+只要骨架，不要猜未定功能，不要做精致界面：
+1. XcodeGen `project.yml` + 生成 `EagleBrowse.xcodeproj`
+2. SwiftUI App 入口（空壳 RootView 即可，占位文字说明「界面等 Design」）
+3. **连接层**（协议 + 实现骨架，能编译）：
+   - 同时支持 SMB 与 WebDAV
+   - 模型：主机、协议、路径、账号；密码走 Keychain（写好读写封装）
+   - 协议层提供：列目录、读文件、读 Data；超时与重试钩子
+   - WebDAV 用 URLSession；SMB 可先用接口 + 占位实现（标注 TODO：真实 SMB 客户端后续接入），不要引入未说明的第三方包，除非是纯 Swift Package 且必要；优先零第三方
+4. **解析层**（Eagle `.library`）：
+   - 根 `metadata.json` → 文件夹树模型
+   - `images/<id>.info/metadata.json` → 素材模型（id、名称、标签、评分、备注、缩略图相对路径、原图相对路径）
+   - 本地索引缓存协议（文件夹树 + 标签 + 缩略图路径），可先用 JSON 文件缓存实现
+5. 单元测试：解析层用一小段假 metadata JSON fixture 测通文件夹树与标签解析（至少几个测试）
+6. README：说明结构、如何用 XcodeGen 生成、如何打开工程；写明第一版只读、不做写入
+
+## 不做
+- 不做精致 UI（连接页/网格/大图留给 Design 后再写）
+- 不做上传、编辑、删除
+- 不 git push、不删无关文件
+- 不改本机 Codex 配置
+
+## 技术约定
+- Bundle id: `com.zekui.eaglebrowse`
+- iOS 17+
+- SwiftUI
+- 可用 `~/Projects/.tools/xcodegen/bin/xcodegen`（若存在）生成工程；生成后尝试 `xcodebuild -scheme EagleBrowse -destination 'platform=iOS Simulator,name=iPhone 17 Pro' -configuration Debug build` 验证能编过
+- 若目录尚非 git 仓库，可 `git init`（不要 push）
+
+## 交付
+列出创建/改动的文件；写明如何验证；构建结果（成功或失败原因）。

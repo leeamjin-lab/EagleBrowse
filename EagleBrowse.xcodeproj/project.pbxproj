@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57C65748B435609135001C5B /* ConnectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357CC4DD087CFFFFC0623D1E /* ConnectionModels.swift */; };
+		6283A343EC2BC68726D3F281 /* EagleModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C756CCEF00BF9EB4A87E9199 /* EagleModels.swift */; };
+		74EDE4A153E8CABF8E30B21F /* EagleLibraryParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B465366AF1BCF568227947 /* EagleLibraryParserTests.swift */; };
+		9916B528C9C46F1482682267 /* root-metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 627F929FB3E3773843108F42 /* root-metadata.json */; };
+		A06B92FC272370C1E70ED019 /* PasswordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DACF0922919EF939FFF1DB /* PasswordStore.swift */; };
+		A1217735FD12548D7E8A53DF /* asset-metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 75BB2651D1A3A7F28777E056 /* asset-metadata.json */; };
+		A740D847D96338AF7BB90BB1 /* EagleBrowseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17764C40808D9BAA1F0E54A0 /* EagleBrowseApp.swift */; };
+		BB72A41B74A4BAB1595B7CA6 /* SMBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94161C77967DA9D9DACAD6A5 /* SMBClient.swift */; };
+		C809D32060E0ADCEFBE5FD5B /* WebDAVClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ED8B46910D5AF87FC1765 /* WebDAVClient.swift */; };
+		CAED4487E2629171871433F3 /* EagleLibraryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86A73C47EA66CAF607F054 /* EagleLibraryParser.swift */; };
+		F52881F24CE97A9C47179E86 /* LocalIndexCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7D163E7801C58BE83361A0 /* LocalIndexCache.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		66F3022D9B96DA82B7B7C7A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAFF0351D14915823EFC8A06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70063B4DA9412B16FD0E41B6;
+			remoteInfo = EagleBrowse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09B465366AF1BCF568227947 /* EagleLibraryParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EagleLibraryParserTests.swift; sourceTree = "<group>"; };
+		17764C40808D9BAA1F0E54A0 /* EagleBrowseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EagleBrowseApp.swift; sourceTree = "<group>"; };
+		1E86A73C47EA66CAF607F054 /* EagleLibraryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EagleLibraryParser.swift; sourceTree = "<group>"; };
+		357CC4DD087CFFFFC0623D1E /* ConnectionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionModels.swift; sourceTree = "<group>"; };
+		627F929FB3E3773843108F42 /* root-metadata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "root-metadata.json"; sourceTree = "<group>"; };
+		75BB2651D1A3A7F28777E056 /* asset-metadata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "asset-metadata.json"; sourceTree = "<group>"; };
+		7F4ED8B46910D5AF87FC1765 /* WebDAVClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDAVClient.swift; sourceTree = "<group>"; };
+		8B3B639C460B2369FA0B005E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8C7D163E7801C58BE83361A0 /* LocalIndexCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalIndexCache.swift; sourceTree = "<group>"; };
+		94161C77967DA9D9DACAD6A5 /* SMBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMBClient.swift; sourceTree = "<group>"; };
+		B1E1C7CF13F3CD93AF020D67 /* EagleBrowseTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = EagleBrowseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C756CCEF00BF9EB4A87E9199 /* EagleModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EagleModels.swift; sourceTree = "<group>"; };
+		CF24F59E6910E26B5009A7AC /* EagleBrowse.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = EagleBrowse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7DACF0922919EF939FFF1DB /* PasswordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		05C3F30169F6E0802D1720B4 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				75BB2651D1A3A7F28777E056 /* asset-metadata.json */,
+				627F929FB3E3773843108F42 /* root-metadata.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		141ED0C8DFA732F5243A7E59 = {
+			isa = PBXGroup;
+			children = (
+				4CD95244E4B734B4806B4BB4 /* Sources */,
+				56D8DA77502D73461A76B5BE /* Tests */,
+				531245D705DF29AF0CC008D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20450737C8A15DB926BDFA25 /* EagleBrowseApp */ = {
+			isa = PBXGroup;
+			children = (
+				17764C40808D9BAA1F0E54A0 /* EagleBrowseApp.swift */,
+				8B3B639C460B2369FA0B005E /* Info.plist */,
+			);
+			path = EagleBrowseApp;
+			sourceTree = "<group>";
+		};
+		2FF5DBB9028FB787106468DE /* EagleBrowseCore */ = {
+			isa = PBXGroup;
+			children = (
+				C4CB09871CD1ED2BE3418DA9 /* Cache */,
+				85F74A1EFC8B3BF561DDEAF1 /* Connection */,
+				CE956AAFF2713A38AE47CBA4 /* Parsing */,
+			);
+			path = EagleBrowseCore;
+			sourceTree = "<group>";
+		};
+		4CD95244E4B734B4806B4BB4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				20450737C8A15DB926BDFA25 /* EagleBrowseApp */,
+				2FF5DBB9028FB787106468DE /* EagleBrowseCore */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		531245D705DF29AF0CC008D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF24F59E6910E26B5009A7AC /* EagleBrowse.app */,
+				B1E1C7CF13F3CD93AF020D67 /* EagleBrowseTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56D8DA77502D73461A76B5BE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8AEFF1FF0C1A0EA2F6F862D5 /* EagleBrowseTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		85F74A1EFC8B3BF561DDEAF1 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				357CC4DD087CFFFFC0623D1E /* ConnectionModels.swift */,
+				F7DACF0922919EF939FFF1DB /* PasswordStore.swift */,
+				94161C77967DA9D9DACAD6A5 /* SMBClient.swift */,
+				7F4ED8B46910D5AF87FC1765 /* WebDAVClient.swift */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		8AEFF1FF0C1A0EA2F6F862D5 /* EagleBrowseTests */ = {
+			isa = PBXGroup;
+			children = (
+				09B465366AF1BCF568227947 /* EagleLibraryParserTests.swift */,
+				05C3F30169F6E0802D1720B4 /* Fixtures */,
+			);
+			path = EagleBrowseTests;
+			sourceTree = "<group>";
+		};
+		C4CB09871CD1ED2BE3418DA9 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				8C7D163E7801C58BE83361A0 /* LocalIndexCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		CE956AAFF2713A38AE47CBA4 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				1E86A73C47EA66CAF607F054 /* EagleLibraryParser.swift */,
+				C756CCEF00BF9EB4A87E9199 /* EagleModels.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		081D22BEEE4346C7A614AD4C /* EagleBrowseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0259E754EC2574221DE6E426 /* Build configuration list for PBXNativeTarget "EagleBrowseTests" */;
+			buildPhases = (
+				DA38453D4469C6D97D45B8F6 /* Sources */,
+				EE89C43E96685462F2924779 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				266C6049D7EB6466CC7746DD /* PBXTargetDependency */,
+			);
+			name = EagleBrowseTests;
+			packageProductDependencies = (
+			);
+			productName = EagleBrowseTests;
+			productReference = B1E1C7CF13F3CD93AF020D67 /* EagleBrowseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		70063B4DA9412B16FD0E41B6 /* EagleBrowse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E1C71D21EA566D96C46CDA9 /* Build configuration list for PBXNativeTarget "EagleBrowse" */;
+			buildPhases = (
+				2E35F6EDDB2E44D96B621908 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EagleBrowse;
+			packageProductDependencies = (
+			);
+			productName = EagleBrowse;
+			productReference = CF24F59E6910E26B5009A7AC /* EagleBrowse.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAFF0351D14915823EFC8A06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 516D0F55C205960859A2A652 /* Build configuration list for PBXProject "EagleBrowse" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 141ED0C8DFA732F5243A7E59;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 531245D705DF29AF0CC008D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70063B4DA9412B16FD0E41B6 /* EagleBrowse */,
+				081D22BEEE4346C7A614AD4C /* EagleBrowseTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE89C43E96685462F2924779 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1217735FD12548D7E8A53DF /* asset-metadata.json in Resources */,
+				9916B528C9C46F1482682267 /* root-metadata.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E35F6EDDB2E44D96B621908 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57C65748B435609135001C5B /* ConnectionModels.swift in Sources */,
+				A740D847D96338AF7BB90BB1 /* EagleBrowseApp.swift in Sources */,
+				CAED4487E2629171871433F3 /* EagleLibraryParser.swift in Sources */,
+				6283A343EC2BC68726D3F281 /* EagleModels.swift in Sources */,
+				F52881F24CE97A9C47179E86 /* LocalIndexCache.swift in Sources */,
+				A06B92FC272370C1E70ED019 /* PasswordStore.swift in Sources */,
+				BB72A41B74A4BAB1595B7CA6 /* SMBClient.swift in Sources */,
+				C809D32060E0ADCEFBE5FD5B /* WebDAVClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA38453D4469C6D97D45B8F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74EDE4A153E8CABF8E30B21F /* EagleLibraryParserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		266C6049D7EB6466CC7746DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70063B4DA9412B16FD0E41B6 /* EagleBrowse */;
+			targetProxy = 66F3022D9B96DA82B7B7C7A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C3A3CC45D9821DB40FF476E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zekui.eaglebrowse.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EagleBrowse.app/EagleBrowse";
+			};
+			name = Debug;
+		};
+		239D596CECB626D6EE678BA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4563B2532779CB7F81CB98E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		91038DCBFD55B6090E491D8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sources/EagleBrowseApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EagleBrowse;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zekui.eaglebrowse;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC6AD7828988E3D74EA1660E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zekui.eaglebrowse.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EagleBrowse.app/EagleBrowse";
+			};
+			name = Release;
+		};
+		CB680503187BD59547F9B528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sources/EagleBrowseApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EagleBrowse;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zekui.eaglebrowse;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0259E754EC2574221DE6E426 /* Build configuration list for PBXNativeTarget "EagleBrowseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C3A3CC45D9821DB40FF476E /* Debug */,
+				BC6AD7828988E3D74EA1660E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2E1C71D21EA566D96C46CDA9 /* Build configuration list for PBXNativeTarget "EagleBrowse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91038DCBFD55B6090E491D8E /* Debug */,
+				CB680503187BD59547F9B528 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		516D0F55C205960859A2A652 /* Build configuration list for PBXProject "EagleBrowse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				239D596CECB626D6EE678BA2 /* Debug */,
+				4563B2532779CB7F81CB98E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAFF0351D14915823EFC8A06 /* Project object */;
+}

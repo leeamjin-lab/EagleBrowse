@@ -1,0 +1,9 @@
+{
+  "id": "asset-001",
+  "name": "城市夜景",
+  "tags": ["夜景", "旅行"],
+  "star": 4,
+  "description": "测试备注",
+  "thumbnailPath": "images/asset-001.info/thumbnail.png",
+  "path": "images/asset-001.info/original.jpg"
+}
