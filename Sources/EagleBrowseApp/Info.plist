@@ -18,6 +18,17 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<key>NSBonjourServices</key>
+	<array/>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>连接你选择的 NAS，读取 Eagle 素材库及缩略图。</string>
 	<key>UILaunchScreen</key>
 	<dict/>
 </dict>

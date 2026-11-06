@@ -1,0 +1,35 @@
+{
+  "folders": [
+    {
+      "id": "reference",
+      "name": "参考",
+      "children": []
+    },
+    {
+      "id": "lighting",
+      "name": "灯光",
+      "children": []
+    },
+    {
+      "id": "cockpit",
+      "name": "座舱",
+      "children": [
+        {
+          "id": "cockpit-night",
+          "name": "夜间座舱",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "ambient",
+      "name": "氛围灯",
+      "children": []
+    },
+    {
+      "id": "unsorted",
+      "name": "未分类",
+      "children": []
+    }
+  ]
+}

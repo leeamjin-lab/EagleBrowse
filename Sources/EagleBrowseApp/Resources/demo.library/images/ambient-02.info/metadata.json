@@ -1,0 +1,16 @@
+{
+  "id": "ambient-02",
+  "name": "氛围灯 02",
+  "ext": "png",
+  "folders": [
+    "ambient"
+  ],
+  "tags": [
+    "夜间",
+    "灵感"
+  ],
+  "width": 640,
+  "height": 480,
+  "annotation": "本地 Demo 素材",
+  "isDeleted": false
+}

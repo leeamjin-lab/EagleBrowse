@@ -17,7 +17,12 @@ targets:
     platform: iOS
     sources:
       - path: Sources/EagleBrowseApp
+        excludes:
+          - Resources
       - path: Sources/EagleBrowseCore
+      - path: Sources/EagleBrowseApp/Resources/demo.library
+        type: folder
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.zekui.eaglebrowse
@@ -28,6 +33,11 @@ targets:
       path: Sources/EagleBrowseApp/Info.plist
       properties:
         UILaunchScreen: {}
+        NSLocalNetworkUsageDescription: 连接你选择的 NAS，读取 Eagle 素材库及缩略图。
+        NSBonjourServices: []
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+          NSAllowsLocalNetworking: true
 
   EagleBrowseTests:
     type: bundle.unit-test

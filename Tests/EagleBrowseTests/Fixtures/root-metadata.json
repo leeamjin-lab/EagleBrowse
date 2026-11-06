@@ -1,16 +1,1 @@
-{
-  "tags": ["摄影", "旅行"],
-  "folders": [
-    {
-      "id": "folder-root",
-      "name": "参考资料",
-      "children": [
-        {
-          "id": "folder-child",
-          "name": "城市",
-          "assetIDs": ["asset-001"]
-        }
-      ]
-    }
-  ]
-}
+{"folders":[{"id":"folder-root","name":"参考资料","iconColor":"#ffcc00","children":[{"id":"folder-child","name":"城市","children":[{"id":"folder-grandchild","name":"夜景"}]}]}]}

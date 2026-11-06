@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 393px; height: 852px; overflow: hidden;
+    font-family: -apple-system, 'SF Pro Text', 'PingFang SC', system-ui, sans-serif;
+    background: #000; color: #fff; -webkit-font-smoothing: antialiased;
+  }
+  .phone { width: 393px; height: 852px; background: #000; position: relative; }
+  .status {
+    height: 54px; padding: 14px 24px 0;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 16px; font-weight: 600;
+  }
+  .nav {
+    height: 44px; display: flex; align-items: center; justify-content: center;
+    position: relative; padding: 0 16px;
+  }
+  .nav .title { font-size: 17px; font-weight: 600; }
+  .nav .glass-pill {
+    position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    height: 32px; padding: 0 10px; border-radius: 16px;
+    background: rgba(58,58,60,0.72); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+    border: 0.5px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; gap: 10px; color: #fff;
+  }
+  .scroll { height: calc(852px - 54px - 44px); overflow: hidden; padding-bottom: 100px; }
+  .top-row {
+    display: flex; align-items: center; gap: 14px;
+    padding: 10px 16px 8px;
+  }
+  .top-thumb {
+    width: 60px; height: 60px; border-radius: 10px; overflow: hidden;
+    background: linear-gradient(135deg,#3a3a3c,#1c1c1e);
+    display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:1px;
+  }
+  .top-thumb i { display:block; background: #2c2c2e; }
+  .top-thumb i:nth-child(1){background:linear-gradient(135deg,#5e5ce6,#64d2ff)}
+  .top-thumb i:nth-child(2){background:linear-gradient(135deg,#ff9f0a,#ff375f)}
+  .top-thumb i:nth-child(3){background:linear-gradient(135deg,#30d158,#64d2ff)}
+  .top-thumb i:nth-child(4){background:linear-gradient(135deg,#bf5af2,#ff9f0a)}
+  .top-meta .name { font-size: 17px; font-weight: 400; }
+  .top-meta .count { font-size: 15px; color: rgba(235,235,245,0.55); margin-top: 2px; }
+  .section {
+    padding: 22px 16px 8px;
+    font-size: 22px; font-weight: 700;
+  }
+  .list { padding: 0 0 0 16px; }
+  .item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 8px 16px 8px 0; min-height: 88px;
+  }
+  .item + .item { border-top: 0.33px solid rgba(84,84,88,0.55); margin-left: 74px; padding-left: 0; }
+  .item + .item { margin-left: 0; padding-left: 0; }
+  /* separator inset after thumbnail like Photos */
+  .item { position: relative; }
+  .item::after {
+    content:''; position:absolute; left:74px; right:0; bottom:0;
+    height: 0.33px; background: rgba(84,84,88,0.55);
+  }
+  .item:last-child::after { display:none; }
+  .thumb {
+    width: 64px; height: 64px; border-radius: 10px; flex-shrink: 0;
+    background-size: cover; background-position: center;
+  }
+  .t1 { background-image: linear-gradient(145deg,#1a2744,#0a84ff 40%,#64d2ff); }
+  .t2 { background-image: linear-gradient(145deg,#2a1a10,#ff9f0a 45%,#ffd60a); }
+  .t3 { background-image: linear-gradient(145deg,#102218,#30d158 50%,#64d2ff); }
+  .t4 { background-image: linear-gradient(145deg,#221028,#bf5af2 40%,#ff375f); }
+  .t5 { background-image: linear-gradient(145deg,#1c1c1e,#48484a 60%,#8e8e93); }
+  .meta { flex: 1; min-width: 0; }
+  .meta .name { font-size: 17px; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .meta .count { font-size: 15px; color: rgba(235,235,245,0.55); margin-top: 3px; }
+  .chev { width: 8px; height: 13px; margin-right: 2px; opacity: 0.28; flex-shrink: 0; }
+  .float-tab {
+    position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%);
+    width: 220px; height: 62px; border-radius: 31px;
+    background: rgba(44,44,46,0.72);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 0.5px solid rgba(255,255,255,0.14);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.45), inset 0 0.5px 0 rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: space-evenly;
+    z-index: 10;
+  }
+  .ftab {
+    width: 44px; height: 44px; border-radius: 22px;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(235,235,245,0.55);
+  }
+  .ftab.on {
+    background: rgba(10,132,255,0.35);
+    color: #fff;
+    box-shadow: inset 0 0 0 0.5px rgba(255,255,255,0.12);
+  }
+  .home {
+    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    width: 134px; height: 5px; background: #fff; border-radius: 3px; opacity: 0.9; z-index: 11;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="status"><span>9:41</span><span style="font-size:13px;letter-spacing:1px">■■■ ▾ ████</span></div>
+  <div class="nav">
+    <div class="title">浏览</div>
+    <div class="glass-pill">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4h10M4 7h6M5.5 10h3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="#fff"><circle cx="8" cy="3.5" r="1.3"/><circle cx="8" cy="8" r="1.3"/><circle cx="8" cy="12.5" r="1.3"/></svg>
+    </div>
+  </div>
+  <div class="scroll">
+    <div class="top-row">
+      <div class="top-thumb"><i></i><i></i><i></i><i></i></div>
+      <div class="top-meta">
+        <div class="name">全部素材</div>
+        <div class="count">1,248 项</div>
+      </div>
+    </div>
+    <div class="section">文件夹</div>
+    <div class="list">
+      <div class="item">
+        <div class="thumb t1"></div>
+        <div class="meta"><div class="name">参考</div><div class="count">32</div></div>
+        <svg class="chev" viewBox="0 0 8 13"><path d="M1 1l5.5 5.5L1 12" stroke="#8E8E93" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="item">
+        <div class="thumb t2"></div>
+        <div class="meta"><div class="name">灯光</div><div class="count">18</div></div>
+        <svg class="chev" viewBox="0 0 8 13"><path d="M1 1l5.5 5.5L1 12" stroke="#8E8E93" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="item">
+        <div class="thumb t3"></div>
+        <div class="meta"><div class="name">座舱</div><div class="count">27</div></div>
+        <svg class="chev" viewBox="0 0 8 13"><path d="M1 1l5.5 5.5L1 12" stroke="#8E8E93" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="item">
+        <div class="thumb t4"></div>
+        <div class="meta"><div class="name">氛围灯</div><div class="count">56</div></div>
+        <svg class="chev" viewBox="0 0 8 13"><path d="M1 1l5.5 5.5L1 12" stroke="#8E8E93" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="item">
+        <div class="thumb t5"></div>
+        <div class="meta"><div class="name">未分类</div><div class="count">23</div></div>
+        <svg class="chev" viewBox="0 0 8 13"><path d="M1 1l5.5 5.5L1 12" stroke="#8E8E93" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div class="section">标签</div>
+    <div class="list">
+      <div class="item">
+        <div class="thumb" style="background:linear-gradient(145deg,#102040,#0A84FF)"></div>
+        <div class="meta"><div class="name">蓝</div><div class="count">41</div></div>
+        <svg class="chev" viewBox="0 0 8 13"><path d="M1 1l5.5 5.5L1 12" stroke="#8E8E93" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="item">
+        <div class="thumb" style="background:linear-gradient(145deg,#2a1808,#FF9F0A)"></div>
+        <div class="meta"><div class="name">夜间</div><div class="count">19</div></div>
+        <svg class="chev" viewBox="0 0 8 13"><path d="M1 1l5.5 5.5L1 12" stroke="#8E8E93" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+  </div>
+  <div class="float-tab">
+    <div class="ftab on">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor"><path d="M3 6.5A2.5 2.5 0 015.5 4H9l1.2 1.2H16.5A2.5 2.5 0 0119 7.7V16a2.5 2.5 0 01-2.5 2.5h-11A2.5 2.5 0 013 16V6.5z"/></svg>
+    </div>
+    <div class="ftab">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 4l1.2 3.6H16l-3 2.3 1.1 3.6L11 11.8 7.9 13.5l1.1-3.6-3-2.3h3.8L11 4z" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="ftab">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="8" r="3.2"/><path d="M4.5 18c1.2-3 3.5-4.5 6.5-4.5s5.3 1.5 6.5 4.5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="home"></div>
+</div>
+</body>
+</html>

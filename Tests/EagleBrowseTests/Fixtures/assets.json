@@ -1,0 +1,1 @@
+[{"id":"asset-002","name":"海边","ext":"png","tags":["旅行"],"folders":["folder-root"],"annotation":"海边备注","modificationTime":"2023-01-01T00:00:00Z"},{"id":"asset-003","name":"山景","ext":"jpg","tags":["自然"],"folders":["folder-child"],"modificationTime":"2025-01-01T00:00:00Z"},{"id":"asset-deleted","name":"已删除","ext":"jpg","isDeleted":true,"tags":["自然"]}]

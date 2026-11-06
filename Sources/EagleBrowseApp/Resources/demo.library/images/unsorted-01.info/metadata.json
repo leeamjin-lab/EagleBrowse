@@ -1,0 +1,16 @@
+{
+  "id": "unsorted-01",
+  "name": "未分类 01",
+  "ext": "png",
+  "folders": [
+    "unsorted"
+  ],
+  "tags": [
+    "蓝",
+    "灵感"
+  ],
+  "width": 640,
+  "height": 480,
+  "annotation": "本地 Demo 素材",
+  "isDeleted": false
+}

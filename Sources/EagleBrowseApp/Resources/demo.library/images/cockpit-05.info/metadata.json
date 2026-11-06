@@ -1,0 +1,16 @@
+{
+  "id": "cockpit-05",
+  "name": "座舱 05",
+  "ext": "png",
+  "folders": [
+    "cockpit"
+  ],
+  "tags": [
+    "蓝",
+    "灵感"
+  ],
+  "width": 640,
+  "height": 480,
+  "annotation": "本地 Demo 素材",
+  "isDeleted": false
+}

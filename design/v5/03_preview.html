@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 393px; height: 852px; overflow: hidden;
+    font-family: -apple-system, 'SF Pro Text', 'PingFang SC', system-ui, sans-serif;
+    background: #000; color: #fff; -webkit-font-smoothing: antialiased;
+  }
+  .phone { width: 393px; height: 852px; background: #000; position: relative; overflow: hidden; }
+  .photo {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(10,132,255,0.35), transparent 50%),
+      radial-gradient(ellipse at 70% 70%, rgba(255,159,10,0.25), transparent 45%),
+      linear-gradient(160deg, #1a1a22 0%, #0c0c10 50%, #151820 100%);
+  }
+  .photo::after {
+    content: '';
+    position: absolute; left: 8%; right: 8%; top: 22%; height: 2px;
+    background: linear-gradient(90deg, transparent, #64D2FF, #0A84FF, transparent);
+    box-shadow: 0 0 12px #0A84FF, 0 80px 0 0 rgba(255,159,10,0.5);
+    opacity: 0.9;
+  }
+  .photo-label {
+    position: absolute; top: 38%; left: 0; right: 0; text-align: center;
+    color: rgba(255,255,255,0.25); font-size: 13px; letter-spacing: 1px;
+  }
+  .status {
+    position: relative; z-index: 2;
+    height: 54px; padding: 14px 28px 0;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 15px; font-weight: 600; color: #fff;
+  }
+  .close {
+    position: absolute; top: 58px; left: 16px; z-index: 3;
+    width: 30px; height: 30px; border-radius: 15px;
+    background: rgba(60,60,67,0.6); backdrop-filter: blur(20px);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sheet {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
+    background: rgba(28,28,30,0.92); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
+    border-radius: 12px 12px 0 0;
+    padding: 8px 0 34px;
+    min-height: 320px;
+  }
+  .grabber {
+    width: 36px; height: 5px; border-radius: 2.5px;
+    background: rgba(235,235,245,0.3); margin: 4px auto 12px;
+  }
+  .block { padding: 8px 20px 14px; border-bottom: 0.33px solid rgba(84,84,88,0.45); }
+  .block:last-of-type { border-bottom: none; }
+  .h {
+    font-size: 13px; color: rgba(235,235,245,0.6); margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    padding: 6px 12px; border-radius: 16px;
+    background: rgba(120,120,128,0.24); font-size: 15px; color: #fff;
+  }
+  .stars { color: #FFD60A; font-size: 20px; letter-spacing: 2px; }
+  .stars .off { color: rgba(235,235,245,0.18); }
+  .note { font-size: 17px; color: #fff; line-height: 1.35; }
+  .home {
+    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    width: 134px; height: 5px; background: #fff; border-radius: 3px; opacity: 0.9; z-index: 5;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="photo"><div class="photo-label">素材预览</div></div>
+  <div class="status"><span>9:41</span><span>■■■ ▾ ████</span></div>
+  <div class="close">
+    <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 2l8 8M10 2L2 10" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </div>
+  <div class="sheet">
+    <div class="grabber"></div>
+    <div class="block">
+      <div class="h">标签</div>
+      <div class="chips">
+        <span class="chip">氛围灯</span>
+        <span class="chip">座舱</span>
+        <span class="chip">蓝</span>
+      </div>
+    </div>
+    <div class="block">
+      <div class="h">星级</div>
+      <div class="stars">★★★★<span class="off">★</span></div>
+    </div>
+    <div class="block">
+      <div class="h">备注</div>
+      <div class="note">夜间安静参考</div>
+    </div>
+  </div>
+  <div class="home"></div>
+</div>
+</body>
+</html>

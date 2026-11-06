@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=393, initial-scale=1"/>
+<style>
+  @font-face { font-family: 'SF'; src: local('SF Pro Text'), local('PingFang SC'), local('-apple-system'); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 393px; height: 852px; overflow: hidden;
+    font-family: -apple-system, 'SF Pro Text', 'PingFang SC', system-ui, sans-serif;
+    background: #000; color: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+  .phone { width: 393px; height: 852px; background: #000; position: relative; }
+  .status {
+    height: 54px; padding: 14px 28px 0;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 15px; font-weight: 600;
+  }
+  .status .right { display: flex; gap: 6px; align-items: center; font-size: 14px; }
+  .nav {
+    height: 44px; display: flex; align-items: center; padding: 0 8px;
+    position: relative;
+  }
+  .nav .back {
+    display: flex; align-items: center; gap: 4px;
+    color: #0A84FF; font-size: 17px; font-weight: 400; padding: 8px 8px;
+  }
+  .nav .back svg { width: 12px; height: 20px; }
+  .nav .title {
+    position: absolute; left: 0; right: 0; text-align: center;
+    font-size: 17px; font-weight: 600; pointer-events: none;
+  }
+  .content { padding: 8px 16px 0; }
+  .group {
+    background: #1C1C1E; border-radius: 10px; overflow: hidden;
+    margin-bottom: 35px;
+  }
+  .row {
+    min-height: 44px; padding: 11px 16px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 0.33px solid rgba(84,84,88,0.65);
+    font-size: 17px;
+  }
+  .row:last-child { border-bottom: none; }
+  .row .label { color: #fff; flex-shrink: 0; margin-right: 12px; }
+  .row .value { color: rgba(235,235,245,0.6); text-align: right; flex: 1; font-size: 17px; }
+  .row input {
+    background: transparent; border: none; outline: none;
+    color: #fff; text-align: right; flex: 1; font-size: 17px;
+    font-family: inherit;
+  }
+  .row input::placeholder { color: rgba(235,235,245,0.3); }
+  .segment {
+    display: flex; background: #2C2C2E; border-radius: 8px; padding: 2px; gap: 0;
+  }
+  .segment span {
+    padding: 5px 14px; font-size: 13px; font-weight: 500;
+    border-radius: 7px; color: #fff;
+  }
+  .segment .on {
+    background: #636366; box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+  .btn {
+    display: block; width: 100%; height: 50px; border: none; border-radius: 12px;
+    background: #0A84FF; color: #fff; font-size: 17px; font-weight: 600;
+    font-family: inherit; margin-top: 8px;
+  }
+  .foot {
+    margin-top: 12px; text-align: center;
+    font-size: 13px; color: rgba(235,235,245,0.4);
+    display: flex; align-items: center; justify-content: center; gap: 4px;
+  }
+  .home {
+    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    width: 134px; height: 5px; background: #fff; border-radius: 3px; opacity: 0.9;
+  }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="status">
+    <span>9:41</span>
+    <span class="right">■■■ ▾ ████</span>
+  </div>
+  <div class="nav">
+    <div class="back">
+      <svg viewBox="0 0 12 20" fill="none"><path d="M10 2L2 10l8 8" stroke="#0A84FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      返回
+    </div>
+    <div class="title">连接库</div>
+  </div>
+  <div class="content">
+    <div class="group">
+      <div class="row">
+        <span class="label">协议</span>
+        <div class="segment">
+          <span>SMB</span>
+          <span class="on">WebDAV</span>
+        </div>
+      </div>
+      <div class="row">
+        <span class="label">服务器</span>
+        <input placeholder="例如 fnos.local"/>
+      </div>
+      <div class="row">
+        <span class="label">端口</span>
+        <input value="443"/>
+      </div>
+      <div class="row">
+        <span class="label">路径</span>
+        <input placeholder="/eagle/Library.library"/>
+      </div>
+      <div class="row">
+        <span class="label">用户名</span>
+        <input placeholder="必填"/>
+      </div>
+      <div class="row">
+        <span class="label">密码</span>
+        <input type="password" value="••••••••"/>
+      </div>
+    </div>
+    <button class="btn">保存并连接</button>
+    <div class="foot">账号保存在本机钥匙串 · 只读访问</div>
+  </div>
+  <div class="home"></div>
+</div>
+</body>
+</html>

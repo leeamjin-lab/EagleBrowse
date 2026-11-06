@@ -2,45 +2,45 @@ import XCTest
 @testable import EagleBrowse
 
 final class EagleLibraryParserTests: XCTestCase {
-    private let parser = EagleLibraryParser()
+    let parser = EagleLibraryParser()
 
-    func testRootMetadataBuildsNestedFolderTreeAndTags() throws {
-        let metadata = try fixture(named: "root-metadata")
-        let root = try parser.parseRootMetadata(metadata)
+    func testNestedFoldersOwnershipAndDeletedFiltering() throws {
+        let root = try fixture("root-metadata")
+        let primary = try fixture("asset-metadata")
+        let extrasObject = try JSONSerialization.jsonObject(with: fixture("assets"))
+        let extras = try XCTUnwrap(extrasObject as? [[String: Any]])
+        var assetData: [Data] = [primary]
+        for item in extras {
+            assetData.append(try JSONSerialization.data(withJSONObject: item))
+        }
 
-        XCTAssertEqual(root.tags, ["摄影", "旅行"])
-        XCTAssertEqual(root.folders.count, 1)
-        XCTAssertEqual(root.folders[0].name, "参考资料")
-        XCTAssertEqual(root.folders[0].children[0].name, "城市")
-        XCTAssertEqual(root.folders[0].children[0].assetIDs, ["asset-001"])
+        let index = try parser.buildIndex(rootMetadata: root, assetMetadata: assetData)
+        XCTAssertEqual(index.assets.count, 3)
+        XCTAssertEqual(index.folders[0].children[0].children[0].name, "夜景")
+        XCTAssertEqual(index.folders[0].children[0].children[0].assetIDs, ["asset-001"])
+        XCTAssertEqual(index.count(forTag: "旅行"), 2)
+        XCTAssertEqual(index.coverAssetID(inFolder: "folder-root"), "asset-002")
     }
 
-    func testAssetMetadataParsesTagsRatingNoteAndPaths() throws {
-        let metadata = try fixture(named: "asset-metadata")
-        let asset = try parser.parseAssetMetadata(metadata)
-
-        XCTAssertEqual(asset.id, "asset-001")
-        XCTAssertEqual(asset.tags, ["夜景", "旅行"])
-        XCTAssertEqual(asset.rating, 4)
-        XCTAssertEqual(asset.note, "测试备注")
-        XCTAssertEqual(asset.thumbnailRelativePath, "images/asset-001.info/thumbnail.png")
-        XCTAssertEqual(asset.originalRelativePath, "images/asset-001.info/original.jpg")
+    func testPathsSearchAndSort() throws {
+        let index = try parser.buildIndex(
+            rootMetadata: fixture("root-metadata"),
+            assetMetadata: [fixture("asset-metadata")]
+        )
+        let asset = try XCTUnwrap(index.assets.first)
+        XCTAssertEqual(asset.thumbnailRelativePath, "images/asset-001.info/城市夜景_thumbnail.png")
+        XCTAssertEqual(asset.originalRelativePath, "images/asset-001.info/城市夜景.jpg")
+        XCTAssertEqual(index.search(name: "夜景").count, 1)
+        XCTAssertEqual(index.search(tag: "旅行").count, 1)
+        XCTAssertEqual(index.search(annotation: "备注").count, 1)
+        XCTAssertEqual(index.sorted(by: .name).first?.name, "城市夜景")
     }
 
-    func testBuildIndexAggregatesTagsAndThumbnailPaths() throws {
-        let root = try fixture(named: "root-metadata")
-        let asset = try fixture(named: "asset-metadata")
-        let index = try parser.buildIndex(rootMetadata: root, assetMetadata: [asset])
-
-        XCTAssertEqual(index.folders.count, 1)
-        XCTAssertEqual(index.tags, ["夜景", "旅行", "摄影"].sorted())
-        XCTAssertEqual(index.thumbnailPaths["asset-001"], "images/asset-001.info/thumbnail.png")
-    }
-
-    private func fixture(named name: String) throws -> Data {
-        let bundle = Bundle(for: Self.self)
-        let url = bundle.url(forResource: name, withExtension: "json", subdirectory: "Fixtures")
-            ?? bundle.url(forResource: name, withExtension: "json")
-        return try Data(contentsOf: try XCTUnwrap(url))
+    private func fixture(_ name: String) throws -> Data {
+        let url = try XCTUnwrap(
+            Bundle(for: Self.self).url(forResource: name, withExtension: "json", subdirectory: "Fixtures")
+                ?? Bundle(for: Self.self).url(forResource: name, withExtension: "json")
+        )
+        return try Data(contentsOf: url)
     }
 }

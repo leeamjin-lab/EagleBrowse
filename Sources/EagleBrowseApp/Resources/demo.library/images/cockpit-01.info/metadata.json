@@ -1,0 +1,18 @@
+{
+  "id": "cockpit-01",
+  "name": "座舱 01",
+  "ext": "png",
+  "folders": [
+    "cockpit"
+  ],
+  "tags": [
+    "蓝",
+    "灵感"
+  ],
+  "width": 480,
+  "height": 320,
+  "annotation": "夜间安静参考",
+  "isDeleted": false,
+  "star": 4,
+  "modificationTime": "2026-10-28T12:00:00Z"
+}
